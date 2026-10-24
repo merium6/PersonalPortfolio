@@ -1,150 +1,100 @@
+import OpenChatButton from "@/components/OpenChatButton";
 import { profile } from "@/data/profile";
 
-const rotatingWords = [
-  "scalable backends",
-  "React frontends",
-  "real-time systems",
-  "clean APIs",
-];
+const stack = ["C#", "ASP.NET Core", "PostgreSQL", "RabbitMQ", "Next.js", "NestJS"];
 
 export default function Hero() {
+  const current = profile.experience[0];
+
   return (
-    <section id="about" className="space-y-4">
-      <div className="bento-cell hero-grid relative overflow-hidden px-6 py-14 sm:px-10 sm:py-20 lg:px-16">
-        <div className="blob blob-indigo -top-24 -left-24 h-80 w-80" />
-        <div className="blob blob-violet -bottom-32 right-[30%] h-96 w-96" />
+    <section id="about" className="relative overflow-hidden bg-[#0e1116] text-[#ecebe6]">
+      <div className="hero-dots pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute -left-60 -top-40 h-[34rem] w-[34rem] bg-[radial-gradient(closest-side,rgba(59,115,176,0.22),transparent)]" />
 
-        <div className="relative grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-7">
-            {profile.available && (
-              <span className="fade-up fade-up-1 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-surface/80 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-accent backdrop-blur">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                </span>
-                {profile.availability}
-              </span>
-            )}
-
-            <h1 className="fade-up fade-up-2 text-4xl font-bold leading-[1.12] tracking-tight sm:text-5xl xl:text-6xl">
-              Hi, I&apos;m {profile.name.split(" ")[0]}.
-              <br />
-              I build{" "}
-              <span className="word-swap">
-                <span className="word-ghost">real-time systems</span>
-                {rotatingWords.map((word) => (
-                  <span key={word} className="gradient-text">
-                    {word}
-                  </span>
-                ))}
-              </span>
-              <br />
-              that just work.
-            </h1>
-
-            <p className="fade-up fade-up-3 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-              {profile.summary}
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.3fr_0.7fr] lg:items-center lg:gap-16">
+        <div>
+          {profile.available && (
+            <p
+              data-hero="eyebrow"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/70"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              {profile.availability}
             </p>
+          )}
 
-            <div className="fade-up fade-up-4 flex flex-wrap items-center gap-3">
-              <a href="#projects" className="btn-accent px-6 py-3.5 text-sm font-semibold">
-                View My Work →
-              </a>
-              <a href="#contact" className="btn-outline px-6 py-3.5 text-sm font-semibold">
-                Get in Touch
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline px-6 py-3.5 text-sm font-semibold"
-              >
-                LinkedIn
-              </a>
-            </div>
+          <h1
+            data-hero="name"
+            className="font-display mt-5 text-[2.6rem] leading-[1.1] sm:text-6xl"
+          >
+            {profile.name}
+          </h1>
+          <p data-hero="title" className="mt-3 text-lg text-white/65 sm:text-xl">
+            {profile.title}
+          </p>
 
-            <p className="fade-up fade-up-4 text-sm text-muted">
-              {profile.title} · {profile.location}
-            </p>
-          </div>
+          <p
+            data-hero="summary"
+            className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/65 sm:text-base"
+          >
+            {profile.summary}
+          </p>
 
-          <div className="relative hidden lg:block">
-            <div className="code-card relative p-6 text-[0.82rem] leading-7">
-              <div className="mb-4 flex items-center gap-2">
-                <span className="code-dot bg-[#f87171]" />
-                <span className="code-dot bg-[#fbbf24]" />
-                <span className="code-dot bg-[#34d399]" />
-                <span className="ml-3 text-xs text-[#6b8a81]">maryam.ts</span>
-              </div>
-              <pre className="whitespace-pre-wrap">
-                <code>
-                  <span className="code-punc">const </span>
-                  <span className="code-key">maryam</span>
-                  <span className="code-punc"> = {"{"}</span>
-                  {"\n  "}
-                  <span className="code-key">role</span>
-                  <span className="code-punc">: </span>
-                  <span className="code-str">&quot;Full Stack Engineer&quot;</span>
-                  <span className="code-punc">,</span>
-                  {"\n  "}
-                  <span className="code-key">backend</span>
-                  <span className="code-punc">: [</span>
-                  <span className="code-str">&quot;.NET&quot;</span>
-                  <span className="code-punc">, </span>
-                  <span className="code-str">&quot;C#&quot;</span>
-                  <span className="code-punc">, </span>
-                  <span className="code-str">&quot;Node.js&quot;</span>
-                  <span className="code-punc">],</span>
-                  {"\n  "}
-                  <span className="code-key">frontend</span>
-                  <span className="code-punc">: [</span>
-                  <span className="code-str">&quot;React&quot;</span>
-                  <span className="code-punc">, </span>
-                  <span className="code-str">&quot;Next.js&quot;</span>
-                  <span className="code-punc">],</span>
-                  {"\n  "}
-                  <span className="code-key">databases</span>
-                  <span className="code-punc">: [</span>
-                  <span className="code-str">&quot;SQL Server&quot;</span>
-                  <span className="code-punc">, </span>
-                  <span className="code-str">&quot;PostgreSQL&quot;</span>
-                  <span className="code-punc">],</span>
-                  {"\n  "}
-                  <span className="code-key">loves</span>
-                  <span className="code-punc">: </span>
-                  <span className="code-str">&quot;clean, scalable code&quot;</span>
-                  <span className="code-punc">,</span>
-                  {"\n"}
-                  <span className="code-punc">{"}"};</span> <span className="type-cursor" />
-                </code>
-              </pre>
-            </div>
-
-            <span className="status-card -left-8 top-6" style={{ animationDelay: "-1s" }}>
-              <span className="flow-check">✓</span> API deployed · 200 OK
-            </span>
-            <span className="status-card -bottom-5 left-10" style={{ animationDelay: "-3.5s" }}>
-              ⚡ Query optimized · 40ms
-            </span>
-            <span className="status-card -right-6 bottom-20" style={{ animationDelay: "-5s" }}>
-              <span className="flow-check">✓</span> Build passing
-            </span>
+          <div data-hero="cta" className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#projects"
+              className="inline-flex items-center rounded-md bg-white px-5 py-2.5 text-sm font-medium text-[#0e1116] transition-colors hover:bg-white/85"
+            >
+              View work
+            </a>
+            <a
+              href={profile.cv}
+              download
+              className="inline-flex items-center rounded-md border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/50"
+            >
+              Download CV
+            </a>
+            <OpenChatButton className="inline-flex items-center gap-2 rounded-md border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/50">
+              Ask my AI
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            </OpenChatButton>
           </div>
         </div>
-      </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {profile.capabilities.map((capability, index) => (
-          <div key={capability.title} className="bento-cell p-6">
-            <span className="gradient-text text-sm font-bold tabular-nums">
-              0{index + 1}
-            </span>
-            <p className="mt-2 text-sm font-semibold">{capability.title}</p>
-            <p className="mt-1.5 text-xs leading-relaxed text-muted">
-              {capability.detail}
-            </p>
-          </div>
-        ))}
+        <div
+          data-hero="card"
+          className="rounded-xl border border-white/10 bg-white/[0.03] p-6"
+        >
+          <dl className="divide-y divide-white/10 text-sm">
+            <div className="pb-3.5">
+              <dt className="text-xs text-white/40">Currently</dt>
+              <dd className="mt-1 font-medium">
+                {current.role} at {current.company}
+              </dd>
+            </div>
+            <div className="py-3.5">
+              <dt className="text-xs text-white/40">Based in</dt>
+              <dd className="mt-1 font-medium">{profile.location}</dd>
+            </div>
+            <div className="py-3.5">
+              <dt className="text-xs text-white/40">Education</dt>
+              <dd className="mt-1 font-medium">{profile.education.degree}, PUCIT</dd>
+            </div>
+            <div className="pt-3.5">
+              <dt className="text-xs text-white/40">Day-to-day stack</dt>
+              <dd className="mt-2.5 flex flex-wrap gap-1.5">
+                {stack.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md border border-white/15 px-2 py-0.5 text-xs text-white/75"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
   );

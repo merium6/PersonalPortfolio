@@ -1,113 +1,89 @@
 import Image from "next/image";
-import Reveal from "@/components/Reveal";
+import CcfStory from "@/components/CcfStory";
+import ProjectsIndex, { type IndexProject } from "@/components/ProjectsIndex";
 import { profile } from "@/data/profile";
 
-type Project = (typeof profile.projects)[number];
+// CCF is the featured case study above; these are the rest.
+const isCcf = (project: IndexProject) => project.name.startsWith("CCF");
 
-function FeatureRow({ project, index }: { project: Project; index: number }) {
-  const reversed = index % 2 === 1;
-
-  const mediaInner = (
-    <div className="feature-media group relative overflow-hidden rounded-2xl border border-border bg-surface">
-      <div className="relative aspect-[16/10]">
+/** Phones: a plain stack of cards instead of the hover index. */
+function MobileCard({ project }: { project: IndexProject }) {
+  return (
+    <article className="overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]">
+      <div className="relative aspect-[16/10] border-b border-white/10 bg-background">
         <Image
-          src={project.image}
+          src={project.images[0]}
           alt={`${project.name} preview`}
           fill
-          sizes="(max-width: 1024px) 100vw, 52vw"
-          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+          sizes="100vw"
+          className="object-cover object-top"
         />
       </div>
-      {project.liveUrl && (
-        <span className="absolute bottom-4 right-4 translate-y-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-white opacity-0 shadow-xl transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          Visit Live Site ↗
-        </span>
-      )}
-    </div>
-  );
-
-  const media = project.liveUrl ? (
-    <a
-      href={project.liveUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block lg:w-[52%]"
-    >
-      {mediaInner}
-    </a>
-  ) : (
-    <div className="lg:w-[52%]">{mediaInner}</div>
-  );
-
-  const content = (
-    <div className="flex flex-1 flex-col justify-center gap-5 py-2">
-      <div className="flex items-center gap-4">
-        <span className="gradient-text text-4xl font-bold tabular-nums sm:text-5xl">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted">
-          {project.category}
-        </span>
+      <div className="p-5">
+        <p className="text-[11px] uppercase tracking-[0.12em] text-white/40">{project.category}</p>
+        <h3 className="mt-2 text-base font-semibold text-white">{project.name}</h3>
+        <p className="mt-2 line-clamp-4 text-sm leading-relaxed text-white/60">
+          {project.description}
+        </p>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-md border border-white/15 px-2 py-0.5 text-xs text-white/75"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-sm font-medium text-white underline decoration-white/30 underline-offset-4"
+          >
+            Visit site ↗
+          </a>
+        )}
       </div>
-      <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-        {project.name}
-      </h3>
-      <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-        {project.description}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {project.tags.map((tag) => (
-          <span key={tag} className="skill-chip px-3 py-1.5 text-xs font-medium">
-            {tag}
-          </span>
-        ))}
-      </div>
-      {project.liveUrl && (
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-accent w-fit px-5 py-3 text-sm font-semibold"
-        >
-          Visit Live Site ↗
-        </a>
-      )}
-    </div>
-  );
-
-  return (
-    <div
-      className={`flex flex-col gap-8 lg:items-center lg:gap-14 ${
-        reversed ? "lg:flex-row-reverse" : "lg:flex-row"
-      }`}
-    >
-      {media}
-      {content}
-    </div>
+    </article>
   );
 }
 
 export default function Projects() {
-  return (
-    <section id="projects" className="space-y-10">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="text-xs uppercase tracking-[0.16em] text-muted">My Work</p>
-        <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Featured <span className="gradient-text">Projects</span>
-        </h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
-          Full-stack work across enterprise platforms, edtech, healthcare, and
-          real estate.
-        </p>
-      </div>
+  const all = profile.projects as unknown as IndexProject[];
+  const ccf = all.find(isCcf);
+  const rest = all.filter((project) => !isCcf(project));
 
-      <div className="space-y-14 sm:space-y-20">
-        {profile.projects.map((project, index) => (
-          <Reveal key={project.name}>
-            <FeatureRow project={project} index={index} />
-          </Reveal>
-        ))}
-      </div>
-    </section>
+  return (
+    <>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">{ccf && <CcfStory tags={ccf.tags} />}</div>
+
+      <section className="relative overflow-hidden bg-[#0e1116] text-[#ecebe6]">
+        <div className="hero-dots pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+          <div data-reveal className="mb-12 max-w-2xl">
+            <p className="eyebrow !text-white/40">More work</p>
+            <h2 className="font-display mt-3 text-3xl sm:text-4xl">
+              Other products I&apos;ve helped build
+            </h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-white/60">
+              Restaurant tech, edtech, real estate, manufacturing and healthcare.
+              <span className="hidden lg:inline"> Hover a project to preview it.</span>
+            </p>
+          </div>
+
+          <div data-reveal>
+            <ProjectsIndex projects={rest} firstNumber={2} />
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:hidden">
+            {rest.map((project) => (
+              <MobileCard key={project.name} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
