@@ -55,9 +55,12 @@ export default function ChatWidget() {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    // The wrapper itself must never catch taps: when the chat is closed its (invisible)
+    // window still takes up space and would otherwise sit on top of the page's buttons.
+    <div className="pointer-events-none fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       {/* Chat window stays mounted so the conversation survives closing. */}
       <div
+        inert={!open}
         className={`origin-bottom-right transition-all duration-200 ${
           open
             ? "pointer-events-auto scale-100 opacity-100"
@@ -75,7 +78,7 @@ export default function ChatWidget() {
             setOpen(true);
             setHint(false);
           }}
-          className="chat-hint relative max-w-[15rem] rounded-2xl rounded-br-sm border border-border bg-surface px-4 py-3 text-left text-sm text-foreground shadow-lg"
+          className="chat-hint pointer-events-auto relative max-w-[15rem] rounded-2xl rounded-br-sm border border-border bg-surface px-4 py-3 text-left text-sm text-foreground shadow-lg"
         >
           Hi! I&apos;m Maryam&apos;s AI. Ask me anything about her work.
         </button>
@@ -89,7 +92,7 @@ export default function ChatWidget() {
         }}
         aria-label={open ? "Close chat" : "Chat with Maryam's AI"}
         aria-expanded={open}
-        className="robot-launcher group relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#2b5c93] to-[#16314f] text-white shadow-[0_12px_30px_-8px_rgba(22,49,79,0.7)] transition hover:scale-105"
+        className="robot-launcher pointer-events-auto group relative flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#2b5c93] to-[#16314f] text-white shadow-[0_12px_30px_-8px_rgba(22,49,79,0.7)] transition hover:scale-105"
       >
         {!open && <span className="absolute inset-0 animate-ping rounded-full bg-[#2b5c93]/40 [animation-duration:2.6s]" />}
         {open ? (
