@@ -35,16 +35,28 @@ function MobileCard({ project }: { project: IndexProject }) {
             </span>
           ))}
         </div>
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm font-medium text-white underline decoration-white/30 underline-offset-4"
-          >
-            Visit site ↗
-          </a>
-        )}
+        <div className="mt-4 flex flex-wrap gap-3">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-white underline decoration-white/30 underline-offset-4"
+            >
+              Visit site ↗
+            </a>
+          )}
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-sky-400 underline decoration-sky-400/30 underline-offset-4"
+            >
+              Live backoffice ↗
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
@@ -57,7 +69,7 @@ export default function Projects() {
 
   return (
     <>
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">{ccf && <CcfStory tags={ccf.tags} />}</div>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">{ccf && <CcfStory tags={ccf.tags} liveUrl={ccf.liveUrl || undefined} />}</div>
 
       <section className="relative overflow-hidden bg-[#0e1116] text-[#ecebe6]">
         <div className="hero-dots pointer-events-none absolute inset-0" />

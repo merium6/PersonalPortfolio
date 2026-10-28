@@ -39,7 +39,7 @@ const KNOWLEDGE: Entry[] = [
     id: "about",
     triggers: ["about yourself", "about you", "who are you", "introduce", "introduction", "tell me about maryam", "about maryam", "who is maryam", "apne bare mein", "apna taaruf", "taaruf", "kaun ho"],
     answer:
-      "I'm Maryam, a software engineer focused on .NET and full-stack development based in Lahore. My main focus is C#, ASP.NET Core, REST APIs and relational databases, and I've worked on multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations. Right now I'm a Software Engineer at Techverx, working on a low-code framework and the Friday restaurant POS.",
+      "I'm Maryam, a software engineer based in Lahore. I started with .NET — C#, ASP.NET Core, REST APIs, PostgreSQL — and my most recent work is Next.js, NestJS and TypeScript on the Friday restaurant POS and backoffice revamp at Techverx. I've also built multi-tenant platforms, RabbitMQ messaging, auth and payment integrations.",
     follow: ["What are your strongest skills?", "Tell me about the Friday POS project"],
   },
   {
@@ -88,21 +88,21 @@ const KNOWLEDGE: Entry[] = [
     id: "friday",
     triggers: ["friday", "fridaypos", "pos", "restaurant", "pizzaiolo", "backoffice", "point of sale", "revamp"],
     answer:
-      "Friday POS is a cloud restaurant management and POS platform. I worked on the original .NET version and its Next.js and NestJS revamp. On the revamp I built order listing, history and details across POS and backoffice, RabbitMQ-based order sync between the two, and sales reporting. On the original platform I built Global Payments flows (saved cards, charging, Pay-by-Link), fixed tenant data-isolation bugs, and made payment token generation faster and more reliable with caching and nonce-based signing.",
+      "Friday POS is a cloud restaurant management and POS platform. I worked on the original .NET version and its Next.js and NestJS revamp. On the revamp I built order listing, history and details across POS and backoffice, RabbitMQ-based order sync between the two, and sales reporting. On the original platform I built Global Payments flows (saved cards, charging, Pay-by-Link), fixed tenant data-isolation bugs, and made payment token generation faster and more reliable with caching and nonce-based signing. You can see the live Pizzaiolo backoffice demo linked on the portfolio.",
     follow: ["Do you have RabbitMQ experience?", "How do you handle payments?"],
   },
   {
     id: "ccf",
     triggers: ["ccf", "common central framework", "low code", "lowcode", "cis ui", "framework", "multi tenant platform"],
     answer:
-      "CCF is a multi-tenant low-code platform built on .NET 8, PostgreSQL, RabbitMQ, MassTransit, Keycloak and Ocelot. I added row reordering, automatic numbering and custom layouts for tenants, improved publishing and import/export so data models and screens move correctly between environments, built Keycloak-backed user and tenant-schema APIs, fixed dynamic CRUD bugs, and hardened the RabbitMQ workers with better retries and failed-message handling.",
+      "CCF is a multi-tenant low-code platform built on .NET 8, PostgreSQL, RabbitMQ, MassTransit, Keycloak and Ocelot. I added row reordering, automatic numbering and custom layouts for tenants, improved publishing and import/export so data models and screens move correctly between environments, built Keycloak-backed user and tenant-schema APIs, fixed dynamic CRUD bugs, and hardened the RabbitMQ workers with better retries and failed-message handling. There's a live demo on the portfolio (US-accessible).",
     follow: ["Do you have multi-tenancy experience?", "Do you have RabbitMQ experience?"],
   },
   {
     id: "mojigurukul",
     triggers: ["mojigurukul", "moji gurukul", "moji", "gurukul", "edtech", "learning platform", "gamified"],
     answer:
-      "MojiGurukul is an AI-enabled gamified learning platform I contribute to through an ongoing freelance engagement with ASP.NET Core and PostgreSQL. I connected student profiles, assessment results and game activity to the AI personalization workflows, fixed progress tracking and status transitions, and supported Razorpay subscriptions including payment links and plan upgrades and downgrades.",
+      "MojiGurukul is an AI-enabled gamified learning platform I work on as a Software Engineer on a part-time/project-based basis, using ASP.NET Core and PostgreSQL. I connected student profiles, assessment results and game activity to the AI personalization workflows, fixed progress tracking and status transitions, and supported Razorpay subscriptions including payment links and plan upgrades and downgrades.",
     follow: ["How do you handle payments?", "Is there any feedback from clients?"],
   },
   {
@@ -123,7 +123,7 @@ const KNOWLEDGE: Entry[] = [
     id: "skills",
     triggers: ["skills", "tech stack", "stack", "technologies", "strongest", "best at", "good at", "expertise", "what do you know", "kya aata hai", "skills batao"],
     answer:
-      "My core is C# and ASP.NET Core with REST APIs, Entity Framework Core and PostgreSQL or SQL Server. Around that I work with RabbitMQ and MassTransit for messaging, JWT, Identity and Keycloak for security, Global Payments and Razorpay for payments, and more recently Next.js, NestJS and TypeScript on the Friday revamp.",
+      "Two areas. Backend: C#, ASP.NET Core, REST APIs, Entity Framework Core, PostgreSQL, SQL Server, RabbitMQ, MassTransit, JWT, Keycloak, Global Payments and Razorpay. Full-stack: Next.js, NestJS and TypeScript — which is what I'm actively using right now on the Friday POS and backoffice revamp at Techverx. The modern stack is current, not just on my CV.",
     follow: ["Do you have RabbitMQ experience?", "What databases do you use?"],
   },
   {
@@ -158,14 +158,14 @@ const KNOWLEDGE: Entry[] = [
     id: "frontend",
     triggers: ["frontend", "front end", "ui", "react", "nextjs", "next js", "typescript", "nestjs", "nest js", "full stack", "fullstack"],
     answer:
-      "Honest answer: my strongest side is backend with .NET, but I'm genuinely full-stack. I've built Razor, jQuery and AJAX interfaces at Phenologix and 10Marla, and I'm using Next.js, NestJS and TypeScript right now on the Friday POS and backoffice revamp, building order workflows and reporting screens.",
+      "Genuinely full-stack. My backend foundation is .NET (ASP.NET Core, C#, PostgreSQL), and my current day-to-day is Next.js, NestJS and TypeScript on the Friday POS and backoffice revamp — building order workflows, history views, reporting screens and RabbitMQ-based sync. I also have earlier Razor, jQuery and AJAX work from Phenologix.",
     follow: ["Tell me about the Friday POS project", "Would you fit a .NET backend role?"],
   },
   {
     id: "fit",
     triggers: ["fit", "hire", "hiring", "good candidate", "why should", "suitable", "role", "position", "job", "opportunity", "naukri", "kaam milega", "recruit", "recruiter", "backend role", "developer role"],
     answer:
-      "If you need a .NET backend or full-stack engineer, I'd say yes. I have hands-on experience with ASP.NET Core APIs, PostgreSQL and SQL Server, multi-tenant platforms, RabbitMQ background processing, auth and payments, and I debug production issues across services. Where I'm newer is the Next.js and NestJS side, which I've picked up on the Friday revamp. Tell me about the role and I'll be upfront about how it lines up.",
+      "Depends on the role. For .NET backend: strong match — ASP.NET Core APIs, PostgreSQL, SQL Server, multi-tenant platforms, RabbitMQ, auth and payments, production debugging. For Next.js or NestJS full-stack: also a genuine match — I'm actively building with Next.js, NestJS and TypeScript on the Friday POS revamp right now. For either, I work closely with product, frontend and QA on implementation and release. Tell me about the role and I'll be upfront about how it lines up.",
     follow: ["What are your strongest skills?", "Are you available to join?"],
   },
   {
@@ -206,7 +206,7 @@ const KNOWLEDGE: Entry[] = [
     id: "testimonial",
     triggers: ["testimonial", "feedback", "reference", "references", "recommend", "review", "clients say", "namit"],
     answer:
-      "Namit Kapoor, the founder of MojiGurukul, worked with me for over a year and described me as a reliable, valued team member who consistently delivers quality backend code and clear documentation across dev, staging and production. You can read it in the testimonial section on this page.",
+      "Namit Kapoor, the founder of MojiGurukul, worked with me in a part-time/project-based Software Engineer capacity and described me as a reliable, valued team member who consistently delivers quality backend code and clear documentation across dev, staging and production. You can read it in the testimonial section on this page.",
     follow: ["Tell me about MojiGurukul", "Tell me about your experience"],
   },
   {
@@ -260,8 +260,8 @@ const FALLBACK =
 export const STARTERS = [
   "What are you working on right now?",
   "Tell me about the Friday POS project",
-  "Do you have RabbitMQ experience?",
-  "Would you fit a .NET backend role?",
+  "Do you know Next.js and TypeScript?",
+  "Would you fit a full-stack role?",
 ];
 
 function normalize(text: string): string {

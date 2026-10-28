@@ -8,6 +8,7 @@ export type IndexProject = {
   category: string;
   images: readonly string[];
   liveUrl: string;
+  demoUrl?: string;
   description: string;
   tags: readonly string[];
   caption?: string;
@@ -95,16 +96,28 @@ export default function ProjectsIndex({
               </span>
             ))}
           </div>
-          {current.liveUrl && (
-            <a
-              href={current.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-[#0e1116] transition-colors hover:bg-white/85"
-            >
-              Visit site ↗
-            </a>
-          )}
+          <div className="mt-5 flex flex-wrap gap-2">
+            {current.liveUrl && (
+              <a
+                href={current.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md bg-white px-4 py-2 text-sm font-medium text-[#0e1116] transition-colors hover:bg-white/85"
+              >
+                Visit site ↗
+              </a>
+            )}
+            {current.demoUrl && (
+              <a
+                href={current.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-md border border-white/25 px-4 py-2 text-sm font-medium text-white/80 transition-colors hover:border-white/50 hover:text-white"
+              >
+                Live backoffice ↗
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

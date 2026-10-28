@@ -1,6 +1,6 @@
 export const profile = {
   name: "Maryam Ali",
-  title: "Software Engineer | .NET & Full-Stack Development",
+  title: "Software Engineer | .NET & TypeScript",
   location: "Lahore, Pakistan",
   email: "mariyamali1623@gmail.com",
   phone: "+92 327 4756937",
@@ -104,10 +104,11 @@ export const profile = {
     {
       name: "Friday POS — Cloud Restaurant Management Platform",
       category: "Restaurant Tech · Techverx",
-      images: ["/projects/friday-menu.png", "/projects/friday-login.png"],
+      images: ["/projects/friday-home.png", "/projects/friday-menu.png", "/projects/friday-login.png"],
       caption:
         "Pizzaiolo Backoffice, a restaurant tenant running on Friday: menu management and sign-in.",
       liveUrl: "https://fridaypos.com/",
+      demoUrl: "https://pizzaiolo.backoffice-v3.preprod.fridaypos.com/login",
       description:
         "Worked on the original .NET platform and its Next.js / NestJS revamp across POS and backoffice. On the revamp: order listing, history and details, RabbitMQ-based order sync between POS and backoffice, and sales reporting. On the original platform: Global Payments workflows (tokenized cards, charging, Pay-by-Link), tenant data-isolation fixes, and faster, more reliable payment token generation.",
       tags: ["Next.js", "NestJS", "TypeScript", "ASP.NET Core", "PostgreSQL", "RabbitMQ", "Global Payments"],
@@ -116,14 +117,14 @@ export const profile = {
       name: "CCF — Common Central Framework",
       category: "Multi-tenant Low-Code Platform · Techverx",
       images: ["/projects/ccf-teal.png"],
-      liveUrl: "",
+      liveUrl: "https://admin.ccf-test.customis.net/",
       description:
         "Added row reordering, automatic numbering and custom layouts for tenants; improved publishing and import/export so data models, screens and settings move correctly between environments; built Keycloak-backed user and tenant-schema APIs; fixed dynamic CRUD issues; and hardened RabbitMQ / MassTransit workers with better retries and failed-message handling.",
       tags: [".NET 8", "PostgreSQL", "RabbitMQ", "MassTransit", "Keycloak", "Ocelot"],
     },
     {
       name: "MojiGurukul — AI-Enabled Gamified Learning",
-      category: "EdTech · Ongoing freelance engagement",
+      category: "EdTech · Software Engineer (Part-time/Project-based)",
       images: ["/projects/mojigurukul.jpg"],
       liveUrl: "https://mojigurukul.com/",
       description:

@@ -15,7 +15,19 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "Maryam Ali | Software Engineer",
   description:
-    "Portfolio of Maryam Ali — Software Engineer specializing in .NET, scalable APIs, and full-stack web applications.",
+    "Portfolio of Maryam Ali — Software Engineer specializing in .NET, TypeScript, scalable REST APIs and full-stack web applications.",
+  openGraph: {
+    title: "Maryam Ali | Software Engineer · .NET & TypeScript",
+    description:
+      "Software Engineer with hands-on experience in ASP.NET Core, Next.js, NestJS, TypeScript, PostgreSQL and RabbitMQ.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Maryam Ali | Software Engineer · .NET & TypeScript",
+    description:
+      "Software Engineer with hands-on experience in ASP.NET Core, Next.js, NestJS, TypeScript, PostgreSQL and RabbitMQ.",
+  },
 };
 
 export default function RootLayout({

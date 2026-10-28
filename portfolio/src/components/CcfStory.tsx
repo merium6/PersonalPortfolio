@@ -42,7 +42,7 @@ const GAP = 62; // px between exploded layers
  * Scrollytelling without scroll-jacking: the text scrolls at normal speed and
  * the 3D platform simply stays beside it while the steps go by.
  */
-export default function CcfStory({ tags }: { tags: readonly string[] }) {
+export default function CcfStory({ tags, liveUrl }: { tags: readonly string[]; liveUrl?: string }) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -72,13 +72,26 @@ export default function CcfStory({ tags }: { tags: readonly string[] }) {
           A multi-tenant low-code platform at Techverx, where I own backend features
           from tenant setup to background workers. Five layers I worked on:
         </p>
-        <div className="mt-4 flex flex-wrap gap-1.5">
+        <div className="mt-4 flex flex-wrap items-center gap-1.5">
           {tags.map((tag) => (
             <span key={tag} className="tag">
               {tag}
             </span>
           ))}
         </div>
+        {liveUrl && (
+          <p className="mt-4 text-[13px] text-muted">
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent"
+            >
+              View live demo ↗
+            </a>
+            <span className="ml-2 opacity-60">(accessible from the US)</span>
+          </p>
+        )}
       </div>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.05fr] lg:gap-14">
