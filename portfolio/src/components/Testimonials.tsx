@@ -10,7 +10,8 @@ export default function Testimonials() {
         data-reveal
         className="mx-auto max-w-3xl rounded-2xl border border-border bg-surface p-7 sm:p-10"
       >
-        <p className="eyebrow">What a client says</p>
+        <p className="eyebrow">Freelance client review</p>
+        <p className="mt-2 text-sm text-muted">MojiGurukul · LinkedIn review dated 13 July 2026 · Ongoing freelance engagement</p>
         <blockquote className="font-display mt-5 text-lg leading-relaxed sm:text-xl sm:leading-relaxed">
           &ldquo;{review.quote}&rdquo;
         </blockquote>

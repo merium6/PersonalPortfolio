@@ -67,7 +67,7 @@ export default function Hero() {
         >
           <dl className="divide-y divide-white/10 text-sm">
             <div className="pb-3.5">
-              <dt className="text-xs text-white/40">Currently</dt>
+              <dt className="text-xs text-white/40">Most recent company role</dt>
               <dd className="mt-1 font-medium">
                 {current.role} at {current.company}
               </dd>

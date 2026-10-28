@@ -1,6 +1,6 @@
 export const profile = {
   name: "Maryam Ali",
-  title: "Full-Stack .NET Developer",
+  title: "Software Engineer | .NET & Full-Stack Development",
   location: "Lahore, Pakistan",
   email: "mariyamali1623@gmail.com",
   phone: "+92 327 4756937",
@@ -10,7 +10,7 @@ export const profile = {
   available: true,
   availability: "Open to new opportunities",
   summary:
-    "Software engineer focused on backend and full-stack development with C#, ASP.NET Core, REST APIs and relational databases. I build multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations, and I'm currently working on the Next.js / NestJS revamp of a restaurant POS.",
+    "Software Engineer specializing in backend and full-stack development using C#, ASP.NET Core, REST APIs and relational databases. My experience includes multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations, with recent Next.js, NestJS and TypeScript work across restaurant POS and backoffice applications.",
   capabilities: [
     {
       title: "Backend & APIs",
@@ -123,7 +123,7 @@ export const profile = {
     },
     {
       name: "MojiGurukul — AI-Enabled Gamified Learning",
-      category: "EdTech · Freelance",
+      category: "EdTech · Ongoing freelance engagement",
       images: ["/projects/mojigurukul.jpg"],
       liveUrl: "https://mojigurukul.com/",
       description:
@@ -141,20 +141,20 @@ export const profile = {
     },
     {
       name: "LumaShape",
-      category: "Manufacturing & Industrial Tools",
+      category: "Manufacturing & Industrial Tools · Freelance",
       images: ["/projects/lumashape.jpg"],
       liveUrl: "https://lumashape.com",
       description:
-        "A connected ecosystem for automated tool scanning, layout design and custom foam insert management, with tool inventory, layout management and scanning APIs.",
+        "Built APIs and responsive interfaces for tool scanning and foam-insert layout workflows as a freelance contributor.",
       tags: ["Next.js", "Node.js", "Express.js", "MongoDB"],
     },
     {
       name: "EstheticMatch",
-      category: "Healthcare & Wellness",
+      category: "Healthcare & Wellness · Freelance",
       images: ["/projects/estheticmatch.jpg"],
       liveUrl: "https://estheticmatch.com",
       description:
-        "A platform connecting patients with aesthetic practitioners: practitioner discovery, profile and treatment search APIs, responsive UI and cloud deployment.",
+        "Built practitioner search and profile APIs and contributed to AWS deployment for a healthcare platform connecting patients with aesthetic practitioners, as a freelance contributor.",
       tags: ["React.js", "Node.js", "PostgreSQL", "AWS"],
     },
   ],
@@ -170,9 +170,10 @@ export const profile = {
       "LINQ",
       "Node.js",
       "NestJS",
+      "Express.js",
     ],
     Frontend: ["React", "Next.js", "TypeScript", "Razor Views", "HTML", "CSS", "jQuery", "AJAX"],
-    "Databases & Caching": ["PostgreSQL", "SQL Server", "MySQL", "Redis", "Valkey"],
+    "Databases & Caching": ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "Valkey"],
     "Architecture & Messaging": [
       "Microservices",
       "Multi-Tenancy",
@@ -187,6 +188,7 @@ export const profile = {
     "Tools & Observability": [
       "Git",
       "Docker",
+      "AWS (deployment contributions)",
       "Postman",
       "Swagger",
       "Prometheus",

@@ -39,7 +39,7 @@ const KNOWLEDGE: Entry[] = [
     id: "about",
     triggers: ["about yourself", "about you", "who are you", "introduce", "introduction", "tell me about maryam", "about maryam", "who is maryam", "apne bare mein", "apna taaruf", "taaruf", "kaun ho"],
     answer:
-      "I'm Maryam, a full-stack .NET developer based in Lahore. My main focus is C#, ASP.NET Core, REST APIs and relational databases, and I've worked on multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations. Right now I'm a Software Engineer at Techverx, working on a low-code framework and the Friday restaurant POS.",
+      "I'm Maryam, a software engineer focused on .NET and full-stack development based in Lahore. My main focus is C#, ASP.NET Core, REST APIs and relational databases, and I've worked on multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations. Right now I'm a Software Engineer at Techverx, working on a low-code framework and the Friday restaurant POS.",
     follow: ["What are your strongest skills?", "Tell me about the Friday POS project"],
   },
   {
@@ -102,7 +102,7 @@ const KNOWLEDGE: Entry[] = [
     id: "mojigurukul",
     triggers: ["mojigurukul", "moji gurukul", "moji", "gurukul", "edtech", "learning platform", "gamified"],
     answer:
-      "MojiGurukul is an AI-enabled gamified learning platform I worked on as a freelance project with ASP.NET Core and PostgreSQL. I connected student profiles, assessment results and game activity to the AI personalization workflows, fixed progress tracking and status transitions, and supported Razorpay subscriptions including payment links and plan upgrades and downgrades.",
+      "MojiGurukul is an AI-enabled gamified learning platform I contribute to through an ongoing freelance engagement with ASP.NET Core and PostgreSQL. I connected student profiles, assessment results and game activity to the AI personalization workflows, fixed progress tracking and status transitions, and supported Razorpay subscriptions including payment links and plan upgrades and downgrades.",
     follow: ["How do you handle payments?", "Is there any feedback from clients?"],
   },
   {
