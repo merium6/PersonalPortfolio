@@ -10,7 +10,7 @@ export const profile = {
   available: true,
   availability: "Open to new opportunities",
   summary:
-    "Software Engineer specializing in backend and full-stack development using C#, ASP.NET Core, REST APIs and relational databases. My experience includes multi-tenant platforms, RabbitMQ messaging, authentication and payment integrations, with recent Next.js, NestJS and TypeScript work across restaurant POS and backoffice applications.",
+    "Software Engineer specializing in backend and full-stack development using C#, ASP.NET Core, REST APIs and relational databases. My experience includes multi-tenant platforms, RabbitMQ messaging, authentication, payment integrations and AI-assisted workflows with Python/FastAPI and LLM APIs, with recent Next.js, NestJS and TypeScript work across restaurant POS and backoffice applications.",
   capabilities: [
     {
       title: "Backend & APIs",
