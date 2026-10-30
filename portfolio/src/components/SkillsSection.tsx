@@ -66,14 +66,6 @@ export default function SkillsSection() {
                   style={{ background: `hsl(${group.hue} 90% 66%)` }}
                 />
                 {group.label}
-                {group.highlight && (
-                  <span
-                    className="rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-                    style={{ background: `hsl(${group.hue} 85% 55% / 0.2)`, color: `hsl(${group.hue} 90% 70%)` }}
-                  >
-                    New
-                  </span>
-                )}
               </h3>
               <span className="text-xs tabular-nums text-white/35">{group.items.length}</span>
             </div>
