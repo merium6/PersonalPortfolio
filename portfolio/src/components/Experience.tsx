@@ -17,8 +17,7 @@ export default function Experience() {
         <p className="eyebrow">Experience</p>
         <h2 className="font-display mt-3 text-3xl sm:text-4xl">Where I&apos;ve worked</h2>
         <p className="mt-3 text-[15px] leading-relaxed text-muted">
-          Three roles since 2024, from an internship to multi-tenant platforms and
-          payments.
+          Four roles since 2024, from an internship to multi-tenant platforms, payments and AI workflows.
         </p>
       </div>
 
@@ -47,10 +46,10 @@ export default function Experience() {
                     <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-xs font-semibold text-white/85">
                       {job.period}
                     </span>
-                    {i === 0 && (
+                    {job.period.includes("Present") && (
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-semibold text-emerald-300">
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                        Current
+                        {i === 0 ? "Current" : "Part-time"}
                       </span>
                     )}
                   </div>

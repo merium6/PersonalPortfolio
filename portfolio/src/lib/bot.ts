@@ -53,14 +53,14 @@ const KNOWLEDGE: Entry[] = [
     id: "current",
     triggers: ["working on right now", "currently working", "current job", "current role", "current company", "right now", "abhi kya kar", "kahan kaam kar", "present job", "techverx"],
     answer:
-      "Since November 2025 I've been a Software Engineer at Techverx in Lahore. I build ASP.NET Core and PostgreSQL backend services for a multi-tenant low-code framework (CCF), and I'm part of the Friday POS revamp using Next.js, NestJS and TypeScript across the POS and backoffice apps. I also investigate production defects across services and work with product, frontend and QA on releases.",
+      "Since November 2025 I've been a Software Engineer at Techverx in Lahore. I build ASP.NET Core and PostgreSQL backend services for a multi-tenant low-code framework (CCF), I'm part of the Friday POS revamp using Next.js, NestJS and TypeScript, and I contribute to AI-assisted workflows using Python/FastAPI and LLM APIs with practical exposure to LangChain and LangGraph. I also investigate production defects across services and work with product, frontend and QA on releases.",
     follow: ["Tell me about the CCF project", "Tell me about the Friday POS project"],
   },
   {
     id: "experience",
     triggers: ["experience", "work history", "career", "years", "companies", "worked at", "previous jobs", "tajurba", "tajriba", "kitna experience", "where have you worked", "background"],
     answer:
-      "Three roles so far. Techverx (Nov 2025 to now) as Software Engineer on a multi-tenant low-code platform and the Friday POS. Phenologix (Oct 2024 to Oct 2025) as Associate Software Engineer, building ASP.NET Core and MVC apps and APIs for real-estate and legal-services products. And Ammag IT Solutions (Jun to Sep 2024), an internship on the live Sorrow Place app with ASP.NET Core and PostgreSQL.",
+      "Four roles since 2024. Techverx (Nov 2025 to now) as Software Engineer on a multi-tenant low-code platform and the Friday POS. MojiGurukul (2024 to now) as a part-time Software Engineer, contributing backend features to an AI-enabled gamified learning platform. Phenologix (Oct 2024 to Oct 2025) as Associate Software Engineer, building ASP.NET Core and MVC apps and APIs for real-estate and legal-services products. And Ammag IT Solutions (Jun to Sep 2024), an internship on the live Sorrow Place app with ASP.NET Core and PostgreSQL.",
     follow: ["What did you do at Phenologix?", "What are your strongest skills?"],
   },
   {
@@ -81,7 +81,7 @@ const KNOWLEDGE: Entry[] = [
     id: "projects",
     triggers: ["projects", "portfolio", "what have you built", "what did you build", "your work", "built", "kaam dikhao", "projects batao"],
     answer:
-      "The main ones: Friday POS, a cloud restaurant and payments platform. CCF, a multi-tenant low-code framework. MojiGurukul, an AI-enabled gamified learning platform. And 10Marla, a real-estate CRM and marketplace. There are also LumaShape and EstheticMatch further down the page. Which one should I go deeper on?",
+      "The main ones: Friday POS, a cloud restaurant and payments platform. CCF, a multi-tenant low-code framework. MojiGurukul, an AI-enabled gamified learning platform. And 10Marla, a real-estate CRM and marketplace. There's also EstheticMatch further down the page. Which one should I go deeper on?",
     follow: ["Tell me about the Friday POS project", "Tell me about the CCF project"],
   },
   {
@@ -95,7 +95,7 @@ const KNOWLEDGE: Entry[] = [
     id: "ccf",
     triggers: ["ccf", "common central framework", "low code", "lowcode", "cis ui", "framework", "multi tenant platform"],
     answer:
-      "CCF is a multi-tenant low-code platform built on .NET 8, PostgreSQL, RabbitMQ, MassTransit, Keycloak and Ocelot. I added row reordering, automatic numbering and custom layouts for tenants, improved publishing and import/export so data models and screens move correctly between environments, built Keycloak-backed user and tenant-schema APIs, fixed dynamic CRUD bugs, and hardened the RabbitMQ workers with better retries and failed-message handling. There's a live demo on the portfolio (US-accessible).",
+      "CCF is a multi-tenant low-code platform built on .NET 8, PostgreSQL, RabbitMQ, MassTransit, Keycloak and Ocelot. I added row reordering, automatic numbering, custom layouts and automatic Conversation Agent database setup for new tenants; improved publishing and import/export so data models and screens move correctly between environments; built chatbot, database-schema and Keycloak-backed user and tenant APIs; contributed to AI-assisted workflows using Python/FastAPI and LLM APIs (LangChain, LangGraph); fixed dynamic CRUD bugs; and hardened the RabbitMQ workers with better retries and failed-message handling. There's a live demo on the portfolio (US-accessible).",
     follow: ["Do you have multi-tenancy experience?", "Do you have RabbitMQ experience?"],
   },
   {
@@ -114,16 +114,16 @@ const KNOWLEDGE: Entry[] = [
   },
   {
     id: "other-projects",
-    triggers: ["lumashape", "luma shape", "estheticmatch", "esthetic match", "healthcare", "foam"],
+    triggers: ["estheticmatch", "esthetic match", "healthcare"],
     answer:
-      "LumaShape is a tool-scanning and foam layout design platform built with Next.js, Node.js, Express and MongoDB. EstheticMatch connects patients with aesthetic practitioners using React, Node.js, PostgreSQL and AWS. Both are on the projects section of this page.",
+      "EstheticMatch is a healthcare platform that connects patients with aesthetic practitioners. I built the practitioner search and profile APIs using React and PostgreSQL, and handled image upload and storage with AWS S3. It's on the projects section of this page.",
     follow: ["Tell me about your projects", "What are your strongest skills?"],
   },
   {
     id: "skills",
     triggers: ["skills", "tech stack", "stack", "technologies", "strongest", "best at", "good at", "expertise", "what do you know", "kya aata hai", "skills batao"],
     answer:
-      "Two areas. Backend: C#, ASP.NET Core, REST APIs, Entity Framework Core, PostgreSQL, SQL Server, RabbitMQ, MassTransit, JWT, Keycloak, Global Payments and Razorpay. Full-stack: Next.js, NestJS and TypeScript — which is what I'm actively using right now on the Friday POS and backoffice revamp at Techverx. The modern stack is current, not just on my CV.",
+      "Three areas. Backend: C#, ASP.NET Core, .NET 8, REST APIs, Entity Framework Core, PostgreSQL, SQL Server, RabbitMQ, MassTransit, JWT, Keycloak, Global Payments and Razorpay. AI and integrations: Python/FastAPI, LLM APIs, LangChain and LangGraph — actively used on CCF at Techverx. Full-stack: Next.js, NestJS and TypeScript — also current, on the Friday POS and backoffice revamp. The modern work is real, not just on my CV.",
     follow: ["Do you have RabbitMQ experience?", "What databases do you use?"],
   },
   {
@@ -239,18 +239,19 @@ const TECH: Record<string, { names: string[]; answer: string }> = {
   nestjs: { names: ["nestjs", "nest js"], answer: "Yes, on the Friday POS revamp. NestJS is the backend there, and I worked on order workflows, the RabbitMQ order sync and sales reporting with it." },
   typescript: { names: ["typescript", "tsx"], answer: "Yes, mainly on the Friday POS revamp, where I write TypeScript and TSX with Next.js and NestJS across the POS and backoffice apps." },
   react: { names: ["react", "reactjs"], answer: "Yes, React is on my skills list, and I've used it on projects like EstheticMatch. Most of my recent frontend work is Next.js, which is React-based." },
-  nodejs: { names: ["nodejs", "node js", "express"], answer: "Yes. I've used Node.js and Express on projects like LumaShape and EstheticMatch, and NestJS, which runs on Node, on the Friday revamp." },
+  nodejs: { names: ["nodejs", "node js", "express"], answer: "NestJS — which runs on Node — is something I actively use on the Friday POS revamp. I haven't listed standalone Node.js or Express separately on my CV, but NestJS is a core part of my current stack." },
   signalr: { names: ["signalr", "websocket", "websockets", "realtime", "real time"], answer: "Yes, I've used SignalR for real-time features, for example on MojiGurukul." },
   jwt: { names: ["jwt", "oauth", "token"], answer: "Yes. I've implemented JWT, ASP.NET Identity and cookie authentication with role-based access control, and I've worked on payment access-token generation on Friday." },
   docker: { names: ["docker", "container", "containers"], answer: "Yes, Docker is part of my toolset, alongside Git, Postman and Swagger." },
   observability: { names: ["prometheus", "grafana", "loki", "logging", "observability", "monitoring"], answer: "Yes. I use structured logging with Grafana Loki and Prometheus for observability, which helps a lot when tracking down production issues across services." },
   frontendbasics: { names: ["jquery", "ajax", "razor", "html", "css", "javascript"], answer: "Yes. I've built Razor Views interfaces with JavaScript, jQuery, AJAX, HTML and CSS at Phenologix and on 10Marla, and these days I write TypeScript on the Friday revamp." },
-  mongodb: { names: ["mongodb", "mongo"], answer: "I've used MongoDB on the LumaShape project, alongside Next.js and Node.js. It's not my main database though. Most of my work is PostgreSQL and SQL Server." },
-  aws: { names: ["aws", "amazon web services"], answer: "I touched AWS on the EstheticMatch project for deployment, but it's not a core strength. My day-to-day is .NET backend work." },
+  mongodb: { names: ["mongodb", "mongo"], answer: "I've used MongoDB on freelance projects. It's not my main database though — most of my work is PostgreSQL and SQL Server." },
+  aws: { names: ["aws", "amazon web services", "s3", "aws s3"], answer: "Yes, AWS S3. On the EstheticMatch project I worked with S3 buckets and implemented image upload and storage functionality. It's in my tools list, though my day-to-day is .NET backend and Next.js/NestJS work." },
+  python: { names: ["python", "fastapi", "langchain", "langgraph", "llm", "llm api", "ai workflow"], answer: "Yes, I've contributed to AI-assisted workflows at Techverx using Python/FastAPI and LLM APIs, with practical exposure to LangChain and LangGraph on the CCF project. It's supplementary to my core .NET and TypeScript work, not my primary stack." },
 };
 
 /** Technologies that are NOT in my CV, so the bot answers honestly. */
-const MISSING = ["python", "django", "flask", "java", "spring", "angular", "vue", "svelte", "kubernetes", "k8s", "azure", "gcp", "graphql", "golang", "go lang", "php", "laravel", "flutter", "react native", "swift", "kotlin", "rust", "ruby", "rails", "terraform", "kafka", "elasticsearch", "machine learning", "tensorflow", "pytorch", "devops", "cicd"];
+const MISSING = ["django", "flask", "java", "spring", "angular", "vue", "svelte", "kubernetes", "k8s", "azure", "gcp", "graphql", "golang", "go lang", "php", "laravel", "flutter", "react native", "swift", "kotlin", "rust", "ruby", "rails", "terraform", "kafka", "elasticsearch", "tensorflow", "pytorch", "devops", "cicd"];
 
 const FALLBACK =
   "Hmm, I don't have that in my CV, and I'd rather not guess. You can ask me about my projects, skills, experience or whether I'd fit a role, or email me at " +

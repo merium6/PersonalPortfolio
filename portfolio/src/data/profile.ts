@@ -46,6 +46,7 @@ export const profile = {
       points: [
         "Build backend services with ASP.NET Core and PostgreSQL.",
         "Contribute to the Friday POS revamp using Next.js, NestJS and TypeScript across POS and backoffice applications.",
+        "Contribute to selected AI-assisted workflows using Python/FastAPI and LLM APIs, with practical exposure to LangChain and LangGraph.",
         "Investigate cross-service production defects and work with product, frontend and QA on implementation, testing and release readiness.",
       ],
       tech: [
@@ -57,8 +58,24 @@ export const profile = {
         "Next.js",
         "NestJS",
         "TypeScript",
+        "Python/FastAPI",
         "Global Payments",
       ],
+    },
+    {
+      role: "Software Engineer — Part-time",
+      company: "MojiGurukul",
+      companyUrl: "https://www.linkedin.com/company/mojigurukul",
+      period: "2024 – Present",
+      location: "Remote",
+      highlight:
+        "Contributing backend features to an AI-enabled gamified learning platform on a part-time, project-based basis.",
+      points: [
+        "Connected student profiles, assessment outcomes, game activity and learning progress to AI personalization workflows.",
+        "Corrected progress persistence and status transitions for in-progress, completed and replayed activities, and resolved tutorial sequencing and navigation issues.",
+        "Supported Razorpay subscriptions and checkout, including payment links, plan handling and upgrade/downgrade state management.",
+      ],
+      tech: ["ASP.NET Core", "MySQL", "REST APIs", "Razorpay", "SignalR"],
     },
     {
       role: "Associate Software Engineer",
@@ -103,7 +120,7 @@ export const profile = {
   projects: [
     {
       name: "Friday POS — Cloud Restaurant Management Platform",
-      category: "Restaurant Tech · Techverx",
+      category: "Restaurant Tech · Techverx · 2025 – Present",
       images: ["/projects/friday-home.png", "/projects/friday-menu.png", "/projects/friday-login.png"],
       caption:
         "Pizzaiolo Backoffice, a restaurant tenant running on Friday: menu management and sign-in.",
@@ -115,12 +132,12 @@ export const profile = {
     },
     {
       name: "CCF — Common Central Framework",
-      category: "Multi-tenant Low-Code Platform · Techverx",
+      category: "Multi-tenant Low-Code Platform · Techverx · 2025 – Present",
       images: ["/projects/ccf-teal.png"],
       liveUrl: "https://admin.ccf-test.customis.net/",
       description:
-        "Added row reordering, automatic numbering and custom layouts for tenants; improved publishing and import/export so data models, screens and settings move correctly between environments; built Keycloak-backed user and tenant-schema APIs; fixed dynamic CRUD issues; and hardened RabbitMQ / MassTransit workers with better retries and failed-message handling.",
-      tags: [".NET 8", "PostgreSQL", "RabbitMQ", "MassTransit", "Keycloak", "Ocelot"],
+        "Added row reordering, automatic numbering, custom layouts and automatic Conversation Agent database setup for new tenants; improved publishing and import/export so data models, screens and settings move correctly between environments; built chatbot, database-schema and Keycloak-backed user and tenant APIs; contributed to AI-assisted workflows using Python/FastAPI and LLM APIs; fixed dynamic CRUD issues; and hardened RabbitMQ / MassTransit workers with better retries and failed-message handling.",
+      tags: [".NET 8", "PostgreSQL", "RabbitMQ", "MassTransit", "Keycloak", "Ocelot", "Python/FastAPI", "LangChain", "LangGraph"],
     },
     {
       name: "MojiGurukul — AI-Enabled Gamified Learning",
@@ -129,11 +146,11 @@ export const profile = {
       liveUrl: "https://mojigurukul.com/",
       description:
         "Connected student profiles, assessment outcomes and game activity to AI personalization workflows, fixed progress persistence and status transitions, and supported Razorpay subscriptions including payment links and plan upgrades and downgrades.",
-      tags: ["ASP.NET Core", "PostgreSQL", "REST APIs", "Razorpay", "SignalR"],
+      tags: ["ASP.NET Core", "MySQL", "REST APIs", "Razorpay", "SignalR"],
     },
     {
       name: "10 Marla — Real-Estate CRM & Marketplace",
-      category: "Real Estate",
+      category: "Real Estate · Phenologix · 2024 – 2025",
       images: ["/projects/tenmarla.jpg"],
       liveUrl: "https://10marla.com/",
       description:
@@ -141,22 +158,13 @@ export const profile = {
       tags: ["ASP.NET Core", "Razor Views", "SQL"],
     },
     {
-      name: "LumaShape",
-      category: "Manufacturing & Industrial Tools · Freelance",
-      images: ["/projects/lumashape.jpg"],
-      liveUrl: "https://lumashape.com",
-      description:
-        "Built APIs and responsive interfaces for tool scanning and foam-insert layout workflows as a freelance contributor.",
-      tags: ["Next.js", "Node.js", "Express.js", "MongoDB"],
-    },
-    {
       name: "EstheticMatch",
-      category: "Healthcare & Wellness · Freelance",
+      category: "Healthcare & Wellness · Fiverr",
       images: ["/projects/estheticmatch.jpg"],
       liveUrl: "https://estheticmatch.com",
       description:
-        "Built practitioner search and profile APIs and contributed to AWS deployment for a healthcare platform connecting patients with aesthetic practitioners, as a freelance contributor.",
-      tags: ["React.js", "Node.js", "PostgreSQL", "AWS"],
+        "Built practitioner search and profile APIs for a platform connecting patients with aesthetic practitioners. Worked with AWS S3 buckets and implemented image upload and storage functionality.",
+      tags: ["React.js", "PostgreSQL", "AWS S3"],
     },
   ],
   skills: {
@@ -169,11 +177,12 @@ export const profile = {
       "Entity Framework Core",
       "Dapper",
       "LINQ",
-      "Node.js",
+      "Python",
+      "FastAPI",
       "NestJS",
-      "Express.js",
     ],
-    Frontend: ["React", "Next.js", "TypeScript", "Razor Views", "HTML", "CSS", "jQuery", "AJAX"],
+    "AI & Integrations": ["OpenAI API", "LLM APIs", "LangChain", "LangGraph"],
+    Frontend: ["Next.js", "React", "TypeScript", "Razor Views", "HTML", "CSS", "jQuery", "AJAX"],
     "Databases & Caching": ["PostgreSQL", "SQL Server", "MySQL", "MongoDB", "Redis", "Valkey"],
     "Architecture & Messaging": [
       "Microservices",
@@ -181,7 +190,6 @@ export const profile = {
       "RabbitMQ",
       "MassTransit",
       "SignalR",
-      "Ocelot",
       "Background Workers",
     ],
     Security: ["Keycloak", "JWT", "ASP.NET Identity", "Role-Based Access Control"],
@@ -189,10 +197,11 @@ export const profile = {
     "Tools & Observability": [
       "Git",
       "Docker",
-      "AWS (deployment contributions)",
+      "Cursor",
+      "Claude",
+      "AWS S3 (buckets and image uploads)",
       "Postman",
       "Swagger",
-      "Prometheus",
       "Grafana Loki",
       "Structured Logging",
     ],

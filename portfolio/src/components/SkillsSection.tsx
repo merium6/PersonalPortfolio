@@ -5,8 +5,9 @@ import SkillsGraph, { GRAPH_NODE_IDS } from "@/components/SkillsGraph";
 import { profile } from "@/data/profile";
 
 // Payments is a short list, so it shares a card with Security.
-const GROUPS: Array<{ label: string; hue: number; items: readonly string[] }> = [
+const GROUPS: Array<{ label: string; hue: number; items: readonly string[]; highlight?: boolean }> = [
   { label: "Backend", hue: 212, items: profile.skills.Backend },
+  { label: "AI & integrations", hue: 48, items: profile.skills["AI & Integrations"], highlight: true },
   { label: "Frontend", hue: 262, items: profile.skills.Frontend },
   { label: "Databases & caching", hue: 188, items: profile.skills["Databases & Caching"] },
   { label: "Architecture & messaging", hue: 32, items: profile.skills["Architecture & Messaging"] },
@@ -48,7 +49,15 @@ export default function SkillsSection() {
         {GROUPS.map((group) => (
           <div
             key={group.label}
-            className="rounded-xl border border-white/10 bg-white/[0.03] p-5"
+            className="rounded-xl border p-5"
+            style={
+              group.highlight
+                ? {
+                    borderColor: `hsl(${group.hue} 85% 55% / 0.4)`,
+                    background: `hsl(${group.hue} 80% 50% / 0.06)`,
+                  }
+                : { borderColor: "rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.03)" }
+            }
           >
             <div className="flex items-center justify-between">
               <h3 className="flex items-center gap-2.5 text-sm font-semibold text-white">
@@ -57,6 +66,14 @@ export default function SkillsSection() {
                   style={{ background: `hsl(${group.hue} 90% 66%)` }}
                 />
                 {group.label}
+                {group.highlight && (
+                  <span
+                    className="rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
+                    style={{ background: `hsl(${group.hue} 85% 55% / 0.2)`, color: `hsl(${group.hue} 90% 70%)` }}
+                  >
+                    New
+                  </span>
+                )}
               </h3>
               <span className="text-xs tabular-nums text-white/35">{group.items.length}</span>
             </div>
