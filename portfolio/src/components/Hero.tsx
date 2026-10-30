@@ -1,7 +1,7 @@
 import OpenChatButton from "@/components/OpenChatButton";
 import { profile } from "@/data/profile";
 
-const stack = ["C#", "ASP.NET Core", "PostgreSQL", "RabbitMQ", "Next.js", "NestJS"];
+const stack = ["C#", "ASP.NET Core", "PostgreSQL", "RabbitMQ", "Next.js", "NestJS", "Python"];
 
 export default function Hero() {
   const current = profile.experience[0];
