@@ -1,6 +1,6 @@
 export const profile = {
   name: "Maryam Ali",
-  title: "Software Engineer | .NET · TypeScript · AI",
+  title: "Software Engineer",
   location: "Lahore, Pakistan",
   email: "mariyamali1623@gmail.com",
   phone: "+92 327 4756937",
